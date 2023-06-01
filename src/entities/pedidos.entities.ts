@@ -41,6 +41,9 @@ class Pedidos {
 
   @Column({ nullable: true, default: 1 })
   loop: number;
+
+  @Column({ nullable: true })
+  total: number;
   // --------------------------------------------------------------------------------
   @Column({ length: 20, nullable: true })
   tamanho1: string;

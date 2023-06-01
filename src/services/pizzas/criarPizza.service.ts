@@ -1,8 +1,8 @@
 import AppDataSource from "../../data-source";
-import { Pedidos } from "../../entities/pedidos.entities";
+import { Pizzas } from "../../entities/pizzas.entities";
 
 const criarPizzaService = async (body: any) => {
-  const pizzasRepositorio = AppDataSource.getRepository(Pedidos);
+  const pizzasRepositorio = AppDataSource.getRepository(Pizzas);
 
   const pizza = pizzasRepositorio.create(body);
 
