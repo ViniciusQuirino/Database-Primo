@@ -14,10 +14,19 @@ const atualizarEtapaService = async (params: string, body: any) => {
     .limit(1)
     .getOne();
 
+  if (body.problema != undefined && body.problema != 0) {
+    const novaEtapa: Etapas = await etapasRepositorio.save({
+      ...etapas,
+      problema: etapas.problema + 1,
+    });
+    return novaEtapa;
+  }
+
   if (etapas) {
     const novaEtapa: Etapas = await etapasRepositorio.save({
       ...etapas,
       ...body,
+      problema: 0,
     });
 
     return novaEtapa;

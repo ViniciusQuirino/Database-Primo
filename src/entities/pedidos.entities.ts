@@ -44,6 +44,9 @@ class Pedidos {
 
   @Column({ nullable: true })
   total: number;
+
+  @Column({ nullable: true })
+  cidade: number;
   // --------------------------------------------------------------------------------
   @Column({ length: 20, nullable: true })
   tamanho1: string;
@@ -56,6 +59,9 @@ class Pedidos {
 
   @Column({ length: 255, nullable: true })
   obs1: string;
+
+  @Column({ length: 100, nullable: true })
+  adcingrediente1: string;
   // --------------------------------------------------------------------------------
   @Column({ length: 20, nullable: true })
   tamanho2: string;
@@ -68,6 +74,9 @@ class Pedidos {
 
   @Column({ length: 255, nullable: true })
   obs2: string;
+
+  @Column({ length: 100, nullable: true })
+  adcingrediente2: string;
   // --------------------------------------------------------------------------------
   @Column({ length: 20, nullable: true })
   tamanho3: string;
@@ -80,6 +89,9 @@ class Pedidos {
 
   @Column({ length: 255, nullable: true })
   obs3: string;
+
+  @Column({ length: 100, nullable: true })
+  adcingrediente3: string;
   // --------------------------------------------------------------------------------
   @Column({ length: 20, nullable: true })
   tamanho4: string;
@@ -92,6 +104,9 @@ class Pedidos {
 
   @Column({ length: 255, nullable: true })
   obs4: string;
+
+  @Column({ length: 100, nullable: true })
+  adcingrediente4: string;
   // --------------------------------------------------------------------------------
   @Column({ length: 20, nullable: true })
   tamanho5: string;
@@ -104,6 +119,9 @@ class Pedidos {
 
   @Column({ length: 255, nullable: true })
   obs5: string;
+
+  @Column({ length: 100, nullable: true })
+  adcingrediente5: string;
   // --------------------------------------------------------------------------------
   @Column({ length: 20, nullable: true })
   tamanho6: string;
@@ -116,6 +134,9 @@ class Pedidos {
 
   @Column({ length: 255, nullable: true })
   obs6: string;
+
+  @Column({ length: 100, nullable: true })
+  adcingrediente6: string;
   // --------------------------------------------------------------------------------
   @Column({ length: 20, nullable: true })
   tamanho7: string;
@@ -128,6 +149,9 @@ class Pedidos {
 
   @Column({ length: 255, nullable: true })
   obs7: string;
+
+  @Column({ length: 100, nullable: true })
+  adcingrediente7: string;
   // --------------------------------------------------------------------------------
   @Column({ length: 20, nullable: true })
   tamanho8: string;
@@ -140,6 +164,9 @@ class Pedidos {
 
   @Column({ length: 255, nullable: true })
   obs8: string;
+
+  @Column({ length: 100, nullable: true })
+  adcingrediente8: string;
   // --------------------------------------------------------------------------------
   @Column({ length: 20, nullable: true })
   tamanho9: string;
@@ -152,6 +179,9 @@ class Pedidos {
 
   @Column({ length: 255, nullable: true })
   obs9: string;
+
+  @Column({ length: 100, nullable: true })
+  adcingrediente9: string;
   // --------------------------------------------------------------------------------
   @Column({ length: 20, nullable: true })
   tamanho10: string;
@@ -164,6 +194,9 @@ class Pedidos {
 
   @Column({ length: 255, nullable: true })
   obs10: string;
+
+  @Column({ length: 100, nullable: true })
+  adcingrediente10: string;
   // --------------------------------------------------------------------------------
 
   @BeforeInsert()

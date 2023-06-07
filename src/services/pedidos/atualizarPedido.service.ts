@@ -23,17 +23,14 @@ const atualizarPedidoService = async (body) => {
       ...body,
       data: formatar,
     });
-
     return pedido;
   } else if (body.b == "loop") {
-    console.log("AAAAAAAAAAAAAAAAAAaaa")
     const pedido: Pedidos = await pedidosRepositorio.save({
       ...ultimoPedido,
       ...body,
       loop: ultimoPedido.loop + 1,
       data: formatar,
     });
-
     return pedido;
   }
 };

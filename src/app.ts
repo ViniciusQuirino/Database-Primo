@@ -6,6 +6,7 @@ import etapasRoutes from "./routes/etapas.routes";
 import pedidosRoutes from "./routes/pedidos.routes";
 import tempoRoutes from "./routes/tempo.routes";
 import pizzasRoutes from "./routes/pizzas.routes";
+import produtosRoutes from "./routes/produtos.routes";
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use("/etapas", etapasRoutes);
 app.use("/pedidos", pedidosRoutes);
 app.use("/tempo", tempoRoutes);
 app.use("/pizzas", pizzasRoutes);
+app.use("/produtos", produtosRoutes);
 
 app.use(handleErrorMiddleware);
 

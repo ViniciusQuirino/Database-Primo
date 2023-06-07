@@ -13,6 +13,9 @@ class Etapas {
 
   @Column({ default: true })
   ativado: boolean;
+
+  @Column({ nullable: true })
+  problema: number;
 }
 
 export { Etapas };
