@@ -17,7 +17,7 @@ const listarPizzasService = async () => {
 
   const produtos: Produtos[] = await produtosRepositorio
     .createQueryBuilder("produtos")
-    .orderBy("produtos.id", "ASC")
+    .orderBy("produtos.idd", "ASC")
     .getMany();
 
   return [...pizzas, ...produtos];

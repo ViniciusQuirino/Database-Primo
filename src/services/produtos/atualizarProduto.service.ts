@@ -9,7 +9,7 @@ const atualizarProdutoService = async (body, params) => {
 
   const encontrar = await produtosRepositorio
     .createQueryBuilder("produtos")
-    .where("produtos.id = :id", { id: params })
+    .where("produtos.idd = :idd", { idd: params })
     .getOne();
 
   if (!encontrar) {

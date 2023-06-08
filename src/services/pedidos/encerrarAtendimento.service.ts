@@ -25,8 +25,8 @@ const encerrarAtendimentoService = async () => {
     .andWhere("pedidos.msgwhats = :msgwhats", {
       msgwhats: false,
     })
-    .andWhere("pedidos.formadepagamento = :formadepagamento", {
-      formadepagamento: "",
+    .andWhere("pedidos.pedidoconfirmado = :pedidoconfirmado", {
+      pedidoconfirmado: false,
     })
     .getMany();
 
@@ -61,12 +61,12 @@ const encerrarAtendimentoService = async () => {
     if (agora - 1800000 <= timesDB) {
       const data = {
         number: telefone,
-        message: `Lamentamos, mas devido à falta de resposta ou interação, este atendimento foi encerrado. Caso precise realizar um pedido futuramente por favor, entre em contato novamente. Estaremos aqui prontamente para atendê-lo.
+        message: `Lamentamos, mas devido à falta de resposta ou interação, este *atendimento* foi *encerrado.* Caso precise realizar um pedido futuramente por favor, entre em contato novamente. Estaremos aqui prontamente para atendê-lo.
 
 Obrigado e até a próxima! 😃`,
       };
 
-      await fetch("http://localhost:7005/send-message", {
+      await fetch("http://localhost:7000/send-message", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -15,8 +15,8 @@ const listarPedidosService = async (params) => {
       .where("pedidos.data like :diaMes", {
         diaMes: `%${inicio}/${final}%`,
       })
-      .andWhere("pedidos.formadepagamento != :formadepagamento", {
-        formadepagamento: "",
+      .andWhere("pedidos.pedidoconfirmado = :pedidoconfirmado", {
+        pedidoconfirmado: true,
       })
       .getMany();
 

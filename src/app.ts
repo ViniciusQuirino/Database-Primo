@@ -7,6 +7,10 @@ import pedidosRoutes from "./routes/pedidos.routes";
 import tempoRoutes from "./routes/tempo.routes";
 import pizzasRoutes from "./routes/pizzas.routes";
 import produtosRoutes from "./routes/produtos.routes";
+import AppDataSource from "./data-source";
+import { Repository } from "typeorm";
+import { Pedidos } from "./entities/pedidos.entities";
+const CronJob = require("cron").CronJob;
 
 const app = express();
 
@@ -20,5 +24,17 @@ app.use("/pizzas", pizzasRoutes);
 app.use("/produtos", produtosRoutes);
 
 app.use(handleErrorMiddleware);
+
+const job = new CronJob("@weekly", async () => {
+  const pedidosRepositorio: Repository<Pedidos> =
+    AppDataSource.getRepository(Pedidos);
+
+  await pedidosRepositorio
+    .createQueryBuilder()
+    .delete()
+    .from(Pedidos)
+    .execute();
+});
+job.start();
 
 export default app;

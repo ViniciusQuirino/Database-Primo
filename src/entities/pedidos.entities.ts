@@ -39,6 +39,9 @@ class Pedidos {
   @Column({ default: false })
   msgwhats: boolean;
 
+  @Column({ default: false })
+  pedidoconfirmado: boolean;
+
   @Column({ nullable: true, default: 1 })
   loop: number;
 
@@ -47,6 +50,7 @@ class Pedidos {
 
   @Column({ nullable: true })
   cidade: number;
+
   // --------------------------------------------------------------------------------
   @Column({ length: 20, nullable: true })
   tamanho1: string;
