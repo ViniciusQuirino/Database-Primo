@@ -14,6 +14,9 @@ class Produtos {
   @Column({ length: 150, nullable: true })
   ingredientes: string;
 
+  @Column({ length: 150, nullable: true })
+  entrega: string;
+
   @Column({ nullable: true })
   valor: number;
 }
