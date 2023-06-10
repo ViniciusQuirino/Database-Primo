@@ -32,7 +32,7 @@ const ativarChatbotService = async () => {
     if (agora - 7200000 >= timesDB) {
       await etapasRepositorio.save({
         ...dados,
-        ativado: true,
+        ativado2: true,
       });
     }
   }

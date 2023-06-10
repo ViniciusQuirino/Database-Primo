@@ -21,6 +21,9 @@ class Etapas {
   @Column({ default: true })
   ativado: boolean;
 
+  @Column({ default: true })
+  ativado2: boolean;
+
   @Column({ nullable: true })
   problema: number;
 
