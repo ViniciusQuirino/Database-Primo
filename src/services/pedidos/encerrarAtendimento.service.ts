@@ -66,7 +66,7 @@ const encerrarAtendimentoService = async () => {
 Obrigado e até a próxima! 😃`,
       };
 
-      await fetch("http://localhost:7005/send-message", {
+      await fetch("https://chatbot-pizzaria.up.railway.app/send-message", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
