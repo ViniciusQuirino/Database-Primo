@@ -1,4 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  BeforeInsert,
+  Repository,
+} from "typeorm";
+import AppDataSource from "../data-source";
 
 @Entity("etapas")
 class Etapas {
@@ -16,6 +23,18 @@ class Etapas {
 
   @Column({ nullable: true })
   problema: number;
+
+  @Column({ length: 50, nullable: true })
+  data: string;
+
+  @BeforeInsert()
+  async antesDeInserir() {
+    const dataDeHoje = new Date();
+
+    const formatar = dataDeHoje.toLocaleString("pt-BR", { timeZone: "UTC" });
+
+    this.data = formatar;
+  }
 }
 
 export { Etapas };
