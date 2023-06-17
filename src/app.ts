@@ -25,7 +25,7 @@ app.use("/produtos", produtosRoutes);
 
 app.use(handleErrorMiddleware);
 
-const job = new CronJob("0 0 */2 * *", async () => {
+const job = new CronJob("0 2 * * 1", async () => {
   const pedidosRepositorio: Repository<Pedidos> =
     AppDataSource.getRepository(Pedidos);
 
