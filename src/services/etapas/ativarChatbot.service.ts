@@ -30,8 +30,20 @@ const ativarChatbotService = async () => {
     const agora = dataDeHoje.getTime();
 
     if (agora - 7200000 >= timesDB) {
+      console.log(dados.etapa);
+      if (dados.etapa == "ajud") {
+        await etapasRepositorio.save({
+          ...dados,
+          etapa: "a",
+          ativado2: true,
+        });
+      }
+    }
+
+    if (agora - 7200000 >= timesDB) {
       await etapasRepositorio.save({
         ...dados,
+        etapa: "a",
         ativado2: true,
       });
     }
