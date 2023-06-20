@@ -59,23 +59,28 @@ const encerrarAtendimentoService = async () => {
     const agora = dataDeHoje.getTime();
 
     if (agora - 1800000 >= timesDB) {
-      const data = {
-        number: telefone,
-        message: `Lamentamos, mas devido à falta de resposta ou interação, este *atendimento* foi *encerrado.* Caso precise realizar um pedido futuramente por favor, entre em contato novamente. Estaremos aqui prontamente para atendê-lo.
+      const date = new Date();
+      const h = date.getHours();
 
-Obrigado e até a próxima! 😃`,
-      };
+      if (h >= 17 && h <= 23) {
+        const data = {
+          number: telefone,
+          message: `Lamentamos, mas devido à falta de resposta ou interação, este *atendimento* foi *encerrado.* Caso precise realizar um pedido futuramente por favor, entre em contato novamente. Estaremos aqui prontamente para atendê-lo.
+  
+  Obrigado e até a próxima! 😃`,
+        };
 
-      await fetch("https://chatbot-pizzaria.up.railway.app/send-message", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-        .then((res) => res.json())
-        .then((res) => res)
-        .catch((err) => console.log(err));
+        await fetch("https://chatbot-pizzaria.up.railway.app/send-message", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((res) => res.json())
+          .then((res) => res)
+          .catch((err) => console.log(err));
+      }
 
       const etapas: Etapas = await etapasRepositorio.findOneBy({
         telefone: dados.telefone,
