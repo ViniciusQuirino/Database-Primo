@@ -28,7 +28,12 @@ const atualizarEtapaService = async (params: string, body: any) => {
       ...etapas,
       problema: etapas.problema + 1,
     });
-    return [novaEtapa, ...produtos.slice(-2)];
+    return [
+      novaEtapa,
+      ...produtos.slice(-2),
+      ...produtos.slice(0, 2),
+      ...produtos.slice(2, 5),
+    ];
   }
 
   if (etapas) {
@@ -38,7 +43,12 @@ const atualizarEtapaService = async (params: string, body: any) => {
       problema: 0,
     });
 
-    return [novaEtapa, ...produtos.slice(-2)];
+    return [
+      novaEtapa,
+      ...produtos.slice(-2),
+      ...produtos.slice(0, 2),
+      ...produtos.slice(2, 5),
+    ];
   } else {
     throw new AppError("Não existe esse numero no banco de dados", 400);
   }
