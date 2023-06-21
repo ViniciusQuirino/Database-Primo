@@ -66,7 +66,7 @@ const encerrarAtendimentoService = async () => {
         number: telefone,
         message: `Lamentamos, mas devido à falta de resposta ou interação, este *atendimento* foi *encerrado.* Caso precise realizar um pedido futuramente por favor, entre em contato novamente. Estaremos aqui prontamente para atendê-lo.
   
-  Obrigado e até a próxima! 😃`,
+Obrigado e até a próxima! 😃`,
       };
 
       await fetch("https://chatbot-pizzaria.up.railway.app/send-message", {
