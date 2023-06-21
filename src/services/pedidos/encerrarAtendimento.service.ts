@@ -58,7 +58,7 @@ const encerrarAtendimentoService = async () => {
 
     const agora = dataDeHoje.getTime();
 
-    if (agora - 1800000 >= timesDB) {
+    if (agora - 900000 >= timesDB) {
       const date = new Date();
       const h = date.getHours();
 
@@ -107,7 +107,7 @@ const encerrarAtendimentoService = async () => {
 
     const agora = dataDeHoje.getTime();
 
-    if (agora - 1800000 >= timesDB) {
+    if (agora - 900000 >= timesDB) {
       await pedidosRepositorio.save({
         ...dados,
         msgwhats: true,
